@@ -1,0 +1,31 @@
+﻿<Window x:Class="LibraryApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryApp"
+        mc:Ignorable="d"
+        ResizeMode="NoResize" WindowStyle="SingleBorderWindow"
+        Title="MainWindow" Height="450" Width="1000" FontFamily="Rockwell Condensed">
+    
+    <Grid Background="White">
+        <DockPanel LastChildFill="False" Background="#FF5F8670" Margin="0,0,500,0"/>
+
+        <Label Content="Gestion de bibliothèque" HorizontalAlignment="Left" Margin="570,27,0,0" VerticalAlignment="Top" Foreground="#FF416751" AutomationProperties.HelpText="" FontSize="48" FontStretch="Medium" Height="66" Width="413"/>
+        <Image HorizontalAlignment="Left" Height="78" Margin="718,93,0,0" VerticalAlignment="Top" Width="84" Source="/248928.png"/>
+
+        <TextBox Margin="614,194,24,0" TextWrapping="Wrap" VerticalAlignment="Top"  Height="31" BorderThickness="3" FontSize="16" Cursor="Arrow" Padding="2,2,2,0" InputScope="Default"/>
+        <TextBox Margin="614,252,24,0" TextWrapping="Wrap" VerticalAlignment="Top"  Height="31" BorderThickness="3" FontSize="16" Cursor="Arrow" Padding="2,2,2,0" InputScope="Password"/>
+
+        <Label Content="Username" HorizontalAlignment="Left" Margin="530,0,0,0" VerticalAlignment="Center" Foreground="#FF416751" FontSize="22" FontStyle="Italic" FontWeight="ExtraBold" Height="51" Width="76"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="530,252,0,0" VerticalAlignment="Top" Foreground="#FF416751" FontSize="20" FontStyle="Italic" FontWeight="ExtraBold" Height="31" Width="71"/>
+
+        <Button Content="Se connecter" HorizontalAlignment="Left" Margin="654,304,0,0" VerticalAlignment="Top" Height="31" Width="122" Background="White" Foreground="#FF5F8670" BorderBrush="#FF5F8670" FontSize="18" FontStretch="Medium" FontWeight="Heavy" Cursor="Cross" BorderThickness="2" Click="Button_Click"/>
+        <Label HorizontalAlignment="Left" Margin="781,304,0,0" VerticalAlignment="Top" FontSize="18" FontStyle="Italic" FontWeight="ExtraBold" Height="42" Width="107">
+            <TextBlock Text="Reset Password" TextDecorations="Underline" Foreground="#FF0027BD"/>
+        </Label>
+        <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" />
+
+    </Grid>
+    
+</Window>
