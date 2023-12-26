@@ -20,7 +20,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="547,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="16" Foreground="#FF5F8670" Height="26" Width="115"><Run Language="fr-fr" Text="Email"/></TextBlock>
         <TextBox x:Name="RoleTextBox" HorizontalAlignment="Left" Margin="743,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="20" BorderThickness="2,2,2,2"/>
         <TextBlock HorizontalAlignment="Left" Margin="745,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="16" Foreground="#FF5F8670" Height="26" Width="115"><Run Language="fr-fr" Text="Role"/></TextBlock>
-        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="272,199,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FF063681" Foreground="#FF063681" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="AddButton_Click"/>
+        <Button x:Name="AddButton_Click" Content="Ajouter" HorizontalAlignment="Left" Margin="272,199,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FF063681" Foreground="#FF063681" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="AddButton_Click"/>
         <Button Content="Modifier" HorizontalAlignment="Left" Margin="455,199,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FF18A42A" Foreground="#FF18A42A" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="UpdateButton_Click"/>
         <Button Content="Supprimez" HorizontalAlignment="Left" Margin="632,199,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FFE31010" Foreground="#FFE31010" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="DeleteButton_Click"/>
         <DataGrid Name="EmployeesDataGrid" ItemsSource="{Binding Employees}" Margin="10,250,294,10" Background="#FFEDEDED" AutoGenerateColumns="False" BorderBrush="White" SelectionChanged="EmployeesDataGrid_SelectionChanged" >
@@ -34,6 +34,7 @@
         </DataGrid>
 
         <Button Content="Exit " HorizontalAlignment="Left" Margin="886,342,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FFE31010" Foreground="#FFE31010" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="39" Margin="723,270,0,0" VerticalAlignment="Top" Width="110"/>
 
     </Grid>
 </Page>

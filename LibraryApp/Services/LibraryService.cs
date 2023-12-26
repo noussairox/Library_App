@@ -1,6 +1,7 @@
 ﻿using LibraryApp.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace LibraryApp.Services
 {
@@ -18,7 +19,7 @@ namespace LibraryApp.Services
             return _dbContext.Employees.ToList();
         }
 
-        // Ajoutez d'autres méthodes pour effectuer des opérations CRUD sur les employés
+        // CRUD sur les employés
         public void AddEmployee(Employee employee)
         {
             _dbContext.Employees.Add(employee);
@@ -31,7 +32,7 @@ namespace LibraryApp.Services
 
             if (existingEmployee != null)
             {
-                // Update properties
+                
                 existingEmployee.Name = employee.Name;
                 existingEmployee.FirstName = employee.FirstName;
                 existingEmployee.Email = employee.Email;
@@ -53,5 +54,23 @@ namespace LibraryApp.Services
             }
         }
 
+        // Exporte csv
+        //
+        public string ExportEmployeesToCsv()
+        {
+            var employees = _dbContext.Employees.ToList();
+
+            // Créer une ligne d'en-tête CSV
+            var csvContent = new StringBuilder();
+            csvContent.AppendLine("ID,Nom,Prénom,Email,Rôle");
+
+            // Ajouter chaque employé comme une ligne CSV
+            foreach (var employee in employees)
+            {
+                csvContent.AppendLine($"{employee.Id},{employee.Name},{employee.FirstName},{employee.Email},{employee.Role}");
+            }
+
+            return csvContent.ToString();
+        }
     }
 }

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Collections.ObjectModel;
-using System.Linq;
 using LibraryApp.Models;
 
 namespace LibraryApp.ViewModels
@@ -17,7 +16,7 @@ namespace LibraryApp.ViewModels
 
         public EmployeeViewModel()
         {
-            // Initialisez votre collection d'employés depuis la base de données
+            // Initialisez la table d'employés depuis la base de données
             Employees = new ObservableCollection<Employee>(GetEmployeesFromDatabase());
 
 
@@ -25,8 +24,8 @@ namespace LibraryApp.ViewModels
 
         private IQueryable<Employee> GetEmployeesFromDatabase()
         {
-            // Code pour récupérer les employés depuis la base de données avec Entity Framework Core
-            var dbContext = new LibraryDbContext(); // Remplacez YourDbContext par votre DbContext réel
+            //récupérer les employés depuis la base de données avec Entity Framework Core
+            var dbContext = new LibraryDbContext(); 
             return dbContext.Employees;
         }
     }
