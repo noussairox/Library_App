@@ -37,8 +37,6 @@
         <Button Content="Exporter" HorizontalAlignment="Left" Margin="728,282,0,0" VerticalAlignment="Top" Height="36" Width="90" Background="White" BorderBrush="#FF3DA491" Foreground="#FF3DA491" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="ExportCsvButton_Click"/>
         <Button Content="Actualiser" HorizontalAlignment="Left" Margin="728,343,0,0" VerticalAlignment="Top" Height="36" Width="90" Background="White" BorderBrush="Black" Foreground="Black" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="Actualiser_Click"/>
         <Image HorizontalAlignment="Left" Height="55" Margin="911,86,0,0" VerticalAlignment="Top" Width="88" Source="/Views/281780-200.png"/>
-        <Button Content="Exit " HorizontalAlignment="Left" Margin="886,342,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FFE31010" Foreground="#FFE31010" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="39" Margin="723,270,0,0" VerticalAlignment="Top" Width="110"/>
 
     </Grid>
 </Page>

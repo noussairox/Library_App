@@ -76,6 +76,57 @@ namespace LibraryApp.Views
         {
             LoadMembers();
         }
+
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("UpdateBtn_Click is triggered.");
+            MessageBox.Show("Update Btn");
+
+            try
+            {
+                if (MembersDataGrid.SelectedItem != null && MembersDataGrid.SelectedItem is Membre selectedMembre)
+                {
+                    MessageBox.Show($"Selected Membre: {selectedMembre.Prenom}, {selectedMembre.Nom}, {selectedMembre.Adresse},{selectedMembre.DateInscription}");
+
+                    var updatedMembre = new Membre
+                    {
+                        Prenom = selectedMembre.Prenom,
+                        Nom = selectedMembre.Nom,
+                        Adresse = selectedMembre.Adresse,
+                        NumeroTelephone = selectedMembre.NumeroTelephone,
+                        Email = selectedMembre.Email,
+                        DateInscription = selectedMembre.DateInscription,
+                    };
+
+                    _memberService.UpdateMembre(updatedMembre);
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez sélectionner un adhérent à mettre à jour.", "Aucun Adhérant sélectionné", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Une erreur s'est produite lors de la mise à jour de l'adhérant : {ex.Message}", "Erreur de mise à jour", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
+        private void MembersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            if (MembersDataGrid.SelectedItem != null && MembersDataGrid.SelectedItem is Membre selectedMembre)
+            {
+                Console.WriteLine($"Selected Member ID: {selectedMembre.MembreId}");
+                MessageBox.Show($"Selected Member ID: {selectedMembre.MembreId}");
+                Prenom.Text = selectedMembre.Prenom;
+                Nom.Text = selectedMembre.Nom;
+                Adresse.Text = selectedMembre.Adresse;
+                NumeroTelephone.Text = selectedMembre.NumeroTelephone;
+                Email.Text = selectedMembre.Email;
+                DateInscription.SelectedDate = selectedMembre.DateInscription;
+            }
+        }
     }
  }
 
