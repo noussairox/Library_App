@@ -1,6 +1,7 @@
 ﻿using LibraryApp.Models;
 using LibraryApp.Services;
 using LibraryApp.ViewModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,7 @@ namespace LibraryApp.Views
         {
             try
             {
+
                 var newMember = new Membre
                 {
                     Prenom = Prenom.Text,
@@ -77,28 +79,31 @@ namespace LibraryApp.Views
             LoadMembers();
         }
 
+
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("UpdateBtn_Click is triggered.");
-            MessageBox.Show("Update Btn");
-
             try
             {
                 if (MembersDataGrid.SelectedItem != null && MembersDataGrid.SelectedItem is Membre selectedMembre)
                 {
                     MessageBox.Show($"Selected Membre: {selectedMembre.Prenom}, {selectedMembre.Nom}, {selectedMembre.Adresse},{selectedMembre.DateInscription}");
 
+                    // Créer un objet Membre avec les modifications
                     var updatedMembre = new Membre
                     {
-                        Prenom = selectedMembre.Prenom,
-                        Nom = selectedMembre.Nom,
-                        Adresse = selectedMembre.Adresse,
-                        NumeroTelephone = selectedMembre.NumeroTelephone,
-                        Email = selectedMembre.Email,
-                        DateInscription = selectedMembre.DateInscription,
+                        MembreId = selectedMembre.MembreId,
+                        Prenom = Prenom.Text,
+                        Nom = Nom.Text,
+                        Adresse = Adresse.Text,
+                        NumeroTelephone = NumeroTelephone.Text,
+                        Email = Email.Text,
+                        DateInscription = DateInscription.SelectedDate ?? DateTime.Now,
                     };
 
+                    // Appeler la méthode UpdateMembre du service
                     _memberService.UpdateMembre(updatedMembre);
+
+                    MessageBox.Show("Mise à jour réussie!");
                 }
                 else
                 {
@@ -108,6 +113,33 @@ namespace LibraryApp.Views
             catch (Exception ex)
             {
                 MessageBox.Show($"Une erreur s'est produite lors de la mise à jour de l'adhérant : {ex.Message}", "Erreur de mise à jour", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (MembersDataGrid.SelectedItem != null && MembersDataGrid.SelectedItem is Membre selectedMembre)
+                {
+                    MessageBox.Show($"Selected Membre to delete: {selectedMembre.Prenom}, {selectedMembre.Nom}, {selectedMembre.Adresse}, {selectedMembre.DateInscription}");
+
+                    // Appeler la méthode DeleteMembre du service
+                    _memberService.DeleteMembre(selectedMembre.MembreId);
+
+                    // Recharger la liste des membres après la suppression
+                    LoadMembers();
+
+                    MessageBox.Show("Suppression réussie!");
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez sélectionner un adhérent à supprimer.", "Aucun Adhérant sélectionné", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Une erreur s'est produite lors de la suppression de l'adhérant : {ex.Message}", "Erreur de suppression", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

@@ -29,41 +29,77 @@ namespace LibraryApp.Services
             _dbContext.SaveChanges();
         }
 
+        // MemberService.cs
+
+
         public void UpdateMembre(Membre membre)
         {
-            // Check the value of MembreId
-            MessageBox.Show($"Updating Membre with MembreId: {membre.MembreId}");
-
-            var actualMembre = _dbContext.Membres.Find(membre.MembreId);
-
-            if (actualMembre != null)
+            try
             {
-                // Display information about the Membre
-                MessageBox.Show($"Updating Database\n{actualMembre}");
-
-                actualMembre.Prenom = membre.Prenom;
-                actualMembre.Nom = membre.Nom;
-                actualMembre.Adresse = membre.Adresse;
-                actualMembre.NumeroTelephone = membre.NumeroTelephone;
-                actualMembre.Email = membre.Email;
-                actualMembre.DateInscription = DateTime.Now; // Utilisez la date actuelle
-
-                // Try saving changes
-                try
+                if (membre != null)
                 {
-                    _dbContext.SaveChanges();
-                    MessageBox.Show("Changes saved successfully.");
+                    // Récupérer le membre correspondant dans la base de données en utilisant son ID
+                    var actualMembre = _dbContext.Membres.Find(membre.MembreId);
+
+                    if (actualMembre != null)
+                    {
+                        // Afficher des informations sur le membre avant la mise à jour
+                        MessageBox.Show($"Updating Membre with MembreId: {membre.MembreId}\nBefore Update: {actualMembre},{membre.DateInscription},nouveau -->,{actualMembre.DateInscription}");
+
+                        // Mettre à jour les propriétés du membre avec les nouvelles valeurs
+                        actualMembre.Prenom = membre.Prenom;
+                        actualMembre.Nom = membre.Nom;
+                        actualMembre.Adresse = membre.Adresse;
+                        actualMembre.NumeroTelephone = membre.NumeroTelephone;
+                        actualMembre.Email = membre.Email;
+                        actualMembre.DateInscription = membre.DateInscription;
+
+                        // Afficher des informations sur le membre après la mise à jour
+                        MessageBox.Show($"After Update: {actualMembre}");
+
+                        // Essayer de sauvegarder les modifications
+                        _dbContext.SaveChanges();
+
+                        MessageBox.Show("Changes saved successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Membre not found in the database.");
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show($"Error saving changes: {ex.Message}");
+                    MessageBox.Show("Invalid Membre object provided for update.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Membre not found in the database.");
+                MessageBox.Show($"Error updating Membre: {ex.Message}");
             }
         }
+        public void DeleteMembre(int membreId)
+        {
+            try
+            {
+                var membreToDelete = _dbContext.Membres.Find(membreId);
+
+                if (membreToDelete != null)
+                {
+                    _dbContext.Membres.Remove(membreToDelete);
+                    _dbContext.SaveChanges();
+                    MessageBox.Show("Adhérent supprimé avec succès.");
+                }
+                else
+                {
+                    MessageBox.Show("Adhérent non trouvé dans la base de données.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors de la suppression de l'adhérent : {ex.Message}", "Erreur de suppression", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
 
 
     }
