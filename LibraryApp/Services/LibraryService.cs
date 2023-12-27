@@ -19,7 +19,11 @@ namespace LibraryApp.Services
             return _dbContext.Employees.ToList();
         }
 
+<<<<<<< HEAD
         //CRUD sur les employés
+=======
+        // CRUD sur les employés
+>>>>>>> 733a38ebf05e54512f43fbd6e9c0f6cc95425c0a
         public void AddEmployee(Employee employee)
         {
             _dbContext.Employees.Add(employee);
@@ -32,7 +36,7 @@ namespace LibraryApp.Services
 
             if (existingEmployee != null)
             {
-                // Update properties
+                
                 existingEmployee.Name = employee.Name;
                 existingEmployee.FirstName = employee.FirstName;
                 existingEmployee.Email = employee.Email;
@@ -54,7 +58,12 @@ namespace LibraryApp.Services
             }
         }
 
+<<<<<<< HEAD
         //exporter les employees CSV
+=======
+        // Exporte csv
+        //
+>>>>>>> 733a38ebf05e54512f43fbd6e9c0f6cc95425c0a
         public string ExportEmployeesToCsv()
         {
             var employees = _dbContext.Employees.ToList();

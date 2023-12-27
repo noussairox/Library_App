@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+<<<<<<< HEAD
 using System.IO;
 using System.Linq;
+=======
+>>>>>>> 733a38ebf05e54512f43fbd6e9c0f6cc95425c0a
 using LibraryApp.Models;
 using LibraryApp.Services;
 
@@ -16,7 +19,11 @@ namespace LibraryApp.ViewModels
 
         public EmployeeViewModel()
         {
+<<<<<<< HEAD
             // Instancié Table employés depuis la base de données
+=======
+            // Initialisez la table d'employés depuis la base de données
+>>>>>>> 733a38ebf05e54512f43fbd6e9c0f6cc95425c0a
             Employees = new ObservableCollection<Employee>(GetEmployeesFromDatabase());
 
             // Initialisez service ici
@@ -25,7 +32,11 @@ namespace LibraryApp.ViewModels
 
         private IQueryable<Employee> GetEmployeesFromDatabase()
         {
+<<<<<<< HEAD
             // Code pour récupérer les employés depuis la base de données avec Entity Framework Core
+=======
+            //récupérer les employés depuis la base de données avec Entity Framework Core
+>>>>>>> 733a38ebf05e54512f43fbd6e9c0f6cc95425c0a
             var dbContext = new LibraryDbContext(); 
             return dbContext.Employees;
         }

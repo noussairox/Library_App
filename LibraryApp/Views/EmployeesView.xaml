@@ -20,7 +20,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="547,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="16" Foreground="#FF5F8670" Height="26" Width="115"><Run Language="fr-fr" Text="Email"/></TextBlock>
         <TextBox x:Name="RoleTextBox" HorizontalAlignment="Left" Margin="743,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="20" BorderThickness="2,2,2,2"/>
         <TextBlock HorizontalAlignment="Left" Margin="745,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="16" Foreground="#FF5F8670" Height="26" Width="115"><Run Language="fr-fr" Text="Role"/></TextBlock>
-        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="272,199,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FF063681" Foreground="#FF063681" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="AddButton_Click"/>
+        <Button x:Name="AddButton_Click" Content="Ajouter" HorizontalAlignment="Left" Margin="272,199,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FF063681" Foreground="#FF063681" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="AddButton_Click"/>
         <Button Content="Modifier" HorizontalAlignment="Left" Margin="455,199,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FF18A42A" Foreground="#FF18A42A" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="UpdateButton_Click"/>
         <Button Content="Supprimez" HorizontalAlignment="Left" Margin="632,199,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FFE31010" Foreground="#FFE31010" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="DeleteButton_Click"/>
         <DataGrid Name="EmployeesDataGrid" ItemsSource="{Binding Employees}" Margin="10,250,294,10" Background="#FFF3F3F3" AutoGenerateColumns="False" BorderBrush="White" SelectionChanged="EmployeesDataGrid_SelectionChanged" Opacity="0.9" >
@@ -33,10 +33,15 @@
             </DataGrid.Columns>
         </DataGrid>
 
+<<<<<<< HEAD
         <Button Content="Exit " HorizontalAlignment="Left" Margin="886,366,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FFE31010" Foreground="#FFE31010" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="ExitButton_Click"/>
         <Button Content="Exporter" HorizontalAlignment="Left" Margin="728,282,0,0" VerticalAlignment="Top" Height="36" Width="90" Background="White" BorderBrush="#FF3DA491" Foreground="#FF3DA491" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="ExportCsvButton_Click"/>
         <Button Content="Actualiser" HorizontalAlignment="Left" Margin="728,343,0,0" VerticalAlignment="Top" Height="36" Width="90" Background="White" BorderBrush="Black" Foreground="Black" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="Actualiser_Click"/>
         <Image HorizontalAlignment="Left" Height="55" Margin="911,86,0,0" VerticalAlignment="Top" Width="88" Source="/Views/281780-200.png"/>
+=======
+        <Button Content="Exit " HorizontalAlignment="Left" Margin="886,342,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FFE31010" Foreground="#FFE31010" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="39" Margin="723,270,0,0" VerticalAlignment="Top" Width="110"/>
+>>>>>>> 733a38ebf05e54512f43fbd6e9c0f6cc95425c0a
 
     </Grid>
 </Page>

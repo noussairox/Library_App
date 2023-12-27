@@ -122,6 +122,7 @@ namespace LibraryApp.Views
             EmployeesDataGrid.ItemsSource = _libraryService.GetEmployees();
         }
 
+<<<<<<< HEAD
         private void ExportCsvButton_Click(object sender, RoutedEventArgs e)
         {
             var saveFileDialog = new Microsoft.Win32.SaveFileDialog
@@ -167,5 +168,8 @@ namespace LibraryApp.Views
         }
 
         
+=======
+       
+>>>>>>> 733a38ebf05e54512f43fbd6e9c0f6cc95425c0a
     }
 }
