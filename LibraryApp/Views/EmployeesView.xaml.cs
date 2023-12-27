@@ -16,7 +16,6 @@ namespace LibraryApp.Views
         {
             InitializeComponent();
             DataContext = new EmployeeViewModel();
-            Loaded += EmployeesView_Loaded;
 
             _libraryService = new LibraryService(new LibraryDbContext()); // Initialisez votre LibraryService
         }
@@ -121,6 +120,50 @@ namespace LibraryApp.Views
         private void RefreshDataGrid()
         {
             EmployeesDataGrid.ItemsSource = _libraryService.GetEmployees();
+        }
+
+        private void ExportCsvButton_Click(object sender, RoutedEventArgs e)
+        {
+            var saveFileDialog = new Microsoft.Win32.SaveFileDialog
+            {
+                FileName = "Employees",
+                DefaultExt = ".csv",
+                Filter = "CSV Files (*.csv)|*.csv|All files (*.*)|*.*"
+            };
+
+            // Affichez la boîte de dialogue de sauvegarde
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                var filePath = saveFileDialog.FileName;
+
+                // Appel de la méthode d'exportation dans le ViewModel
+                ((EmployeeViewModel)DataContext).ExportToCsv(filePath);
+
+                MessageBox.Show($"Les employés ont été exportés avec succès vers : {filePath}", "Exportation réussie", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void Actualiser_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshDataGrid();
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Instanciez le cadre (Frame) pour la navigation
+            Frame frame = new Frame();
+
+            // Créez une instance de la page MembersView
+            MembersView membersView = new MembersView();
+
+            // Définissez la page à afficher dans le cadre
+            frame.Content = membersView;
+
+            // Obtenez la fenêtre principale à partir du bouton cliqué
+            Window mainWindow = Window.GetWindow((Button)sender);
+
+            // Définissez la fenêtre principale pour afficher le cadre
+            mainWindow.Content = frame;
         }
 
         

@@ -11,7 +11,7 @@
     <Grid Background="#FFFF" Margin="10,0,0,0">
         <StackPanel HorizontalAlignment="Center" Height="81" VerticalAlignment="Top" Width="990" Background="#FF5F8670"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,17,0,0" TextWrapping="Wrap" Text="Application de gestion d'une bibliothèque" VerticalAlignment="Top" FontFamily="Pristina" FontSize="36" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="22" Foreground="#FF5F8670"><Run Text="gestion des "/><Run Language="fr-fr" Text="employées"/><LineBreak/><Run Language="fr-fr"/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="20" Foreground="#FF5F8670"><Run Text="gestion des "/><Run Language="fr-fr" Text="employées"/><LineBreak/><Run Language="fr-fr"/></TextBlock>
         <TextBox x:Name="NomTextBox" HorizontalAlignment="Left" Margin="114,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="20" BorderThickness="2,2,2,2" />
         <TextBlock HorizontalAlignment="Left" Margin="116,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="16" Foreground="#FF5F8670" Height="26" Width="115"><Run Language="fr-fr" Text="Nom"/></TextBlock>
         <TextBox x:Name="PrenomTextBox" HorizontalAlignment="Left" Margin="329,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="22" BorderThickness="2,2,2,2"/>
@@ -23,7 +23,7 @@
         <Button Content="Ajouter" HorizontalAlignment="Left" Margin="272,199,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FF063681" Foreground="#FF063681" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="AddButton_Click"/>
         <Button Content="Modifier" HorizontalAlignment="Left" Margin="455,199,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FF18A42A" Foreground="#FF18A42A" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="UpdateButton_Click"/>
         <Button Content="Supprimez" HorizontalAlignment="Left" Margin="632,199,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FFE31010" Foreground="#FFE31010" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="DeleteButton_Click"/>
-        <DataGrid Name="EmployeesDataGrid" ItemsSource="{Binding Employees}" Margin="10,250,294,10" Background="#FFEDEDED" AutoGenerateColumns="False" BorderBrush="White" SelectionChanged="EmployeesDataGrid_SelectionChanged" >
+        <DataGrid Name="EmployeesDataGrid" ItemsSource="{Binding Employees}" Margin="10,250,294,10" Background="#FFF3F3F3" AutoGenerateColumns="False" BorderBrush="White" SelectionChanged="EmployeesDataGrid_SelectionChanged" Opacity="0.9" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
                 <DataGridTextColumn Header="Nom" Binding="{Binding Name}" Width="150"/>
@@ -33,7 +33,10 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Content="Exit " HorizontalAlignment="Left" Margin="886,342,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FFE31010" Foreground="#FFE31010" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1"/>
+        <Button Content="Exit " HorizontalAlignment="Left" Margin="886,366,0,0" VerticalAlignment="Top" Height="36" Width="91" Background="White" BorderBrush="#FFE31010" Foreground="#FFE31010" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="ExitButton_Click"/>
+        <Button Content="Exporter" HorizontalAlignment="Left" Margin="728,282,0,0" VerticalAlignment="Top" Height="36" Width="90" Background="White" BorderBrush="#FF3DA491" Foreground="#FF3DA491" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="ExportCsvButton_Click"/>
+        <Button Content="Actualiser" HorizontalAlignment="Left" Margin="728,343,0,0" VerticalAlignment="Top" Height="36" Width="90" Background="White" BorderBrush="Black" Foreground="Black" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="Actualiser_Click"/>
+        <Image HorizontalAlignment="Left" Height="55" Margin="911,86,0,0" VerticalAlignment="Top" Width="88" Source="/Views/281780-200.png"/>
 
     </Grid>
 </Page>

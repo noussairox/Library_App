@@ -32,7 +32,9 @@ namespace LibraryApp
 
         }
 
-        private void mainFrame_Navigated(object sender, NavigationEventArgs e)
+      
+
+        private void mainFrame_Navigated_1(object sender, NavigationEventArgs e)
         {
 
         }

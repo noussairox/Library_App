@@ -152,13 +152,27 @@
     <Compile Include="Migrations\20231224192636_InitialCreate.designer.cs">
       <DependentUpon>20231224192636_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20231226214540_Member.cs" />
+    <Compile Include="Migrations\20231226214540_Member.designer.cs">
+      <DependentUpon>20231226214540_Member.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231226223135_Memberupdate.cs" />
+    <Compile Include="Migrations\20231226223135_Memberupdate.designer.cs">
+      <DependentUpon>20231226223135_Memberupdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\LibraryDbContextModelSnapshot.cs" />
     <Compile Include="Models\Employe.cs" />
     <Compile Include="Models\LibraryDbContext.cs" />
+    <Compile Include="Models\Membre.cs" />
     <Compile Include="Services\LibraryService.cs" />
+    <Compile Include="Services\MemberService.cs" />
     <Compile Include="ViewModels\EmployeeViewModel .cs" />
+    <Compile Include="ViewModels\MemberViewModel.cs" />
     <Compile Include="Views\EmployeesView.xaml.cs">
       <DependentUpon>EmployeesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MembersView.xaml.cs">
+      <DependentUpon>MembersView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -173,6 +187,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\EmployeesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MembersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,12 +222,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Views\32-327951_events-learning-circle-icon-library-management-system-icon.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Copie de Blue and Pink Professional Business Strategy Presentation.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="248928.png" />
+    <Resource Include="Views\248928.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\281780-200.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

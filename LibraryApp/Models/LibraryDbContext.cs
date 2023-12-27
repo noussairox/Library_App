@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 namespace LibraryApp.Models
 {
     public class LibraryDbContext : DbContext
+
     {
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Membre> Membres { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

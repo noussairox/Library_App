@@ -74,3 +74,5 @@ D:\Project_visualStudio\LibraryApp\LibraryApp\bin\Debug\System.Threading.Tasks.E
 D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\LibraryApp.csproj.CopyComplete
 D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\LibraryApp.csproj.SuggestedBindingRedirects.cache
 D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\LibraryApp.exe.config
+D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\Views\MembersView.g.cs
+D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\Views\MembersView.baml
