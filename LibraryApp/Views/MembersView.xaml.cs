@@ -143,6 +143,26 @@ namespace LibraryApp.Views
             }
         }
 
+        private void ExportCsvButton_Click(object sender, RoutedEventArgs e)
+        {
+            var saveFileDialog = new Microsoft.Win32.SaveFileDialog
+            {
+                FileName = "Members",
+                DefaultExt = ".csv",
+                Filter = "CSV Files (*.csv)|*.csv|All files (*.*)|*.*"
+            };
+
+            // Affichez la boîte de dialogue de sauvegarde
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                var filePath = saveFileDialog.FileName;
+
+                // Appel de la méthode d'exportation dans le ViewModel
+                ((MemberViewModel)DataContext).ExportToCsv(filePath);
+
+                MessageBox.Show($"Les employés ont été exportés avec succès vers : {filePath}", "Exportation réussie", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
 
         private void MembersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

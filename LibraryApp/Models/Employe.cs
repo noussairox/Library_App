@@ -11,12 +11,19 @@ namespace LibraryApp.Models
     {
         [Key]
         public int Id { get; set; }
+
         [Required]
         public string Name { get; set; }
+
         [Required]
         public string FirstName { get; set; }
+
         [Required]
         public string Email { get; set; }
+
+        [Required]
+        public string PasswordHash { get; set; }
+
         [Required]
         public RoleType Role { get; set; }
     }
@@ -26,4 +33,5 @@ namespace LibraryApp.Models
         Administrator,
         Employee
     }
+
 }

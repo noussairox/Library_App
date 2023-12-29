@@ -160,6 +160,10 @@
     <Compile Include="Migrations\20231226223135_Memberupdate.designer.cs">
       <DependentUpon>20231226223135_Memberupdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20231229214204_Employee-update-structure.cs" />
+    <Compile Include="Migrations\20231229214204_Employee-update-structure.designer.cs">
+      <DependentUpon>20231229214204_Employee-update-structure.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\LibraryDbContextModelSnapshot.cs" />
     <Compile Include="Models\Employe.cs" />
     <Compile Include="Models\LibraryDbContext.cs" />
@@ -233,6 +237,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Views\281780-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\2471952.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

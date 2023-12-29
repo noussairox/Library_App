@@ -1,6 +1,8 @@
 ﻿using LibraryApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace LibraryApp.Services
@@ -13,7 +15,6 @@ namespace LibraryApp.Services
         {
             _dbContext = dbContext;
         }
-
         public List<Employee> GetEmployees()
         {
             return _dbContext.Employees.ToList();
@@ -69,6 +70,46 @@ namespace LibraryApp.Services
             }
 
             return csvContent.ToString();
+        }
+        public Employee AuthenticateUser(string username, string password)
+        {
+            // Recherchez l'utilisateur par email
+            var user = _dbContext.Employees.SingleOrDefault(e => e.Email == username);
+
+            if (user != null)
+            {
+                // Vérifiez le mot de passe hashé avec SHA-256
+                if (VerifyHashedPassword(password, user.PasswordHash))
+                {
+                    return user;
+                }
+            }
+
+            return null;
+        }
+
+        public void HashAndSetPassword(Employee employee, string password)
+        {
+            // Hash du mot de passe avec SHA-256 
+            employee.PasswordHash = HashPassword(password);
+        }
+
+        private string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                // Convertit le mot de passe en tableau de bytes
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                // Convertit le tableau de bytes en une chaîne hexadécimale
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+
+        private bool VerifyHashedPassword(string password, string hashedPassword)
+        {
+            // Vérifie le mot de passe en comparant les hachages
+            return string.Equals(hashedPassword, HashPassword(password));
         }
     }
 }

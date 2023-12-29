@@ -21,11 +21,12 @@
         <Label Content="Gestion de bibliothèque" HorizontalAlignment="Left" Margin="570,27,0,0" VerticalAlignment="Top" Foreground="#FF416751" AutomationProperties.HelpText="" FontSize="48" FontStretch="Medium" Height="66" Width="413"/>
         <Image HorizontalAlignment="Left" Height="78" Margin="718,93,0,0" VerticalAlignment="Top" Width="84" Source="/248928.png"/>
 
-        <TextBox Margin="614,194,24,0" TextWrapping="Wrap" VerticalAlignment="Top"  Height="31" BorderThickness="3" FontSize="16" Cursor="Arrow" Padding="2,2,2,0" InputScope="Default"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="614,252,0,0" VerticalAlignment="Top"  Height="31" BorderThickness="3" FontSize="16" Cursor="Arrow" Padding="2,2,2,0" InputScope="Password" Width="347"/>
+        <TextBox x:Name="UsernameTextBox" Margin="614,194,24,0" TextWrapping="Wrap" VerticalAlignment="Top"  Height="31" BorderThickness="3" FontSize="16" Cursor="Arrow" Padding="2,2,2,0" InputScope="Default"/>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="614,252,0,0" VerticalAlignment="Top"  Height="31" BorderThickness="3" FontSize="16" Cursor="Arrow" Padding="2,2,2,0" InputScope="Password" Width="347"/>
 
         <Label Content="Username" HorizontalAlignment="Left" Margin="528,0,0,0" VerticalAlignment="Center" Foreground="#FF416751" FontSize="20" FontStyle="Italic" FontWeight="ExtraBold" Height="51" Width="76"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="528,252,0,0" VerticalAlignment="Top" Foreground="#FF416751" FontSize="20" FontStyle="Italic" FontWeight="ExtraBold" Height="31" Width="71"/>
+        <CheckBox x:Name="IsAdministrator" Content="Administrator" Margin="735,346,132,62" IsChecked="{Binding IsAdministrator}" FontSize="20" />
 
         <Button Content="Se connecter" HorizontalAlignment="Left" Margin="654,304,0,0" VerticalAlignment="Top" Height="31" Width="122" Background="White" Foreground="#FF5F8670" BorderBrush="#FF5F8670" FontSize="18" FontStretch="Medium" FontWeight="Heavy" Cursor="Cross" BorderThickness="2" Click="Button_Click"/>
         <Label HorizontalAlignment="Left" Margin="781,304,0,0" VerticalAlignment="Top" FontSize="18" FontStyle="Italic" FontWeight="ExtraBold" Height="42" Width="107">

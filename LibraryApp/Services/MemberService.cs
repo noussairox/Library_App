@@ -100,6 +100,24 @@ namespace LibraryApp.Services
             }
         }
 
+        //export csv
+        public string ExportMemberToCsv()
+        {
+            var members = _dbContext.Membres.ToList();
+
+            // Créer une ligne d'en-tête CSV
+            var csvContent = new StringBuilder();
+            csvContent.AppendLine("ID,Prenom,Nom,Adresse,NumeroTelephone,Email,DateInscription");
+
+            // Ajouter chaque employé comme une ligne CSV
+            foreach (var member in members)
+            {
+                csvContent.AppendLine($"{member.MembreId},{member.Prenom},{member.Nom},{member.Adresse}" +
+                    $",{member.NumeroTelephone},{member.Email},{member.DateInscription}");
+            }
+
+            return csvContent.ToString();
+        }
 
 
     }
