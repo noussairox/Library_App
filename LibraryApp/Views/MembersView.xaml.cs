@@ -35,6 +35,10 @@ namespace LibraryApp.Views
 
             DateInscription.SelectedDate = DateTime.Now;
             LoadMembers();
+
+
+
+
         }
 
         private void AjouterBtn_Click(object sender, RoutedEventArgs e)
@@ -179,6 +183,16 @@ namespace LibraryApp.Views
                 DateInscription.SelectedDate = selectedMembre.DateInscription;
             }
         }
+
+        private void LivreButton_Click(object sender, RoutedEventArgs e)
+        {
+                Frame frame = new Frame();
+                LivresView livresView = new LivresView();
+                frame.Content = livresView;
+                Window mainWindow = Window.GetWindow((Button)sender);
+                mainWindow.Content = frame;
+        }
+
     }
- }
+}
 

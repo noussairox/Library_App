@@ -13,6 +13,8 @@ namespace LibraryApp.Models
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Membre> Membres { get; set; }
 
+        public DbSet<Livre> Livres { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Configure your MySQL connection string here

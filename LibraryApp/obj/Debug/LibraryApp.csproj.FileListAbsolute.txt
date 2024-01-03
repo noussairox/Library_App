@@ -76,3 +76,5 @@ D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\LibraryApp.csproj.Sugges
 D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\LibraryApp.exe.config
 D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\Views\MembersView.g.cs
 D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\Views\MembersView.baml
+D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\Views\LivresView.g.cs
+D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\Views\LivresView.baml

@@ -164,16 +164,46 @@
     <Compile Include="Migrations\20231229214204_Employee-update-structure.designer.cs">
       <DependentUpon>20231229214204_Employee-update-structure.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20240102190737_LivreUpdateStructure.cs" />
+    <Compile Include="Migrations\20240102190737_LivreUpdateStructure.designer.cs">
+      <DependentUpon>20240102190737_LivreUpdateStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240102193317_ne.cs" />
+    <Compile Include="Migrations\20240102193317_ne.designer.cs">
+      <DependentUpon>20240102193317_ne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240102195417_Livre_structure.cs" />
+    <Compile Include="Migrations\20240102195417_Livre_structure.designer.cs">
+      <DependentUpon>20240102195417_Livre_structure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240103114431_AddImageToLivre.cs" />
+    <Compile Include="Migrations\20240103114431_AddImageToLivre.designer.cs">
+      <DependentUpon>20240103114431_AddImageToLivre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240103123349_AddImageToLivre__.cs" />
+    <Compile Include="Migrations\20240103123349_AddImageToLivre__.designer.cs">
+      <DependentUpon>20240103123349_AddImageToLivre__.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240103123521_AddImageToLivre_001.cs" />
+    <Compile Include="Migrations\20240103123521_AddImageToLivre_001.designer.cs">
+      <DependentUpon>20240103123521_AddImageToLivre_001.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\LibraryDbContextModelSnapshot.cs" />
     <Compile Include="Models\Employe.cs" />
     <Compile Include="Models\LibraryDbContext.cs" />
+    <Compile Include="Models\Livre.cs" />
     <Compile Include="Models\Membre.cs" />
     <Compile Include="Services\LibraryService.cs" />
+    <Compile Include="Services\LivreService.cs" />
     <Compile Include="Services\MemberService.cs" />
     <Compile Include="ViewModels\EmployeeViewModel .cs" />
+    <Compile Include="ViewModels\LivreViewModel.cs" />
     <Compile Include="ViewModels\MemberViewModel.cs" />
     <Compile Include="Views\EmployeesView.xaml.cs">
       <DependentUpon>EmployeesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LivresView.xaml.cs">
+      <DependentUpon>LivresView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MembersView.xaml.cs">
       <DependentUpon>MembersView.xaml</DependentUpon>
@@ -191,6 +221,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\EmployeesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LivresView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
