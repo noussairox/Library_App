@@ -3,14 +3,16 @@ using System;
 using LibraryApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LibraryApp.Migrations
 {
     [DbContext(typeof(LibraryDbContext))]
-    partial class LibraryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240104172606_Reservation_001")]
+    partial class Reservation_001
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -114,15 +116,7 @@ namespace LibraryApp.Migrations
             modelBuilder.Entity("LibraryApp.Models.Reservation", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DateReservation")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<bool>("EstEmprunte")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("LivreId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<string>("NomEmprunteur")
@@ -132,15 +126,6 @@ namespace LibraryApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Reservations");
-                });
-
-            modelBuilder.Entity("LibraryApp.Models.Reservation", b =>
-                {
-                    b.HasOne("LibraryApp.Models.Livre", "Livre")
-                        .WithMany()
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

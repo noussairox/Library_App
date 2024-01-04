@@ -14,6 +14,8 @@ namespace LibraryApp.Models
         public DbSet<Membre> Membres { get; set; }
 
         public DbSet<Livre> Livres { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
