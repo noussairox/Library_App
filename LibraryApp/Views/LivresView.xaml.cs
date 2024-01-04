@@ -23,13 +23,43 @@ namespace LibraryApp.Views
     /// </summary>
     public partial class LivresView : Page
     {
-        private readonly LibraryService _livreService ;
+        private readonly LivreService _livreService ;
         public LivresView()
         {
             InitializeComponent();
             DataContext = new LivreViewModel();
 
-            _livreService = new LibraryService(new LibraryDbContext()); // Initialisez votre LibraryService
+            _livreService = new LivreService(new LibraryDbContext()); // Initialisez votre LibraryService
+        }
+
+        private void AjouterLivreButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame frame = new Frame();
+            AddLivreView addLivreView = new AddLivreView();
+            frame.Content = addLivreView;
+            Window mainWindow = Window.GetWindow((Button)sender);
+            mainWindow.Content = frame;
+        }
+
+        private void ExportCsvButton_Click(object sender, RoutedEventArgs e)
+        {
+            var saveFileDialog = new Microsoft.Win32.SaveFileDialog
+            {
+                FileName = "Livres",
+                DefaultExt = ".csv",
+                Filter = "CSV Files (*.csv)|*.csv|All files (*.*)|*.*"
+            };
+
+            // Affichez la boîte de dialogue de sauvegarde
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                var filePath = saveFileDialog.FileName;
+
+                // Appel de la méthode d'exportation dans le ViewModel
+                ((MemberViewModel)DataContext).ExportToCsv(filePath);
+
+                MessageBox.Show($"Les Livres ont été exportés avec succès vers : {filePath}", "Exportation réussie", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

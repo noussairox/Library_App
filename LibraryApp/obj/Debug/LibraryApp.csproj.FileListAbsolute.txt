@@ -78,3 +78,5 @@ D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\Views\MembersView.g.cs
 D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\Views\MembersView.baml
 D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\Views\LivresView.g.cs
 D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\Views\LivresView.baml
+D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\Views\AddLivreView.g.cs
+D:\Project_visualStudio\LibraryApp\LibraryApp\obj\Debug\Views\AddLivreView.baml

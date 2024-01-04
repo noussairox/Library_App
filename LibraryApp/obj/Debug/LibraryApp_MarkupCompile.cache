@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Project_visualStudio\LibraryApp\LibraryApp\App.xaml
-4-1271039647
+5-1316191553
 
-391778747133
+40613615927
 46112595234
-MainWindow.xaml;Views\EmployeesView.xaml;Views\LivresView.xaml;Views\MembersView.xaml;
+MainWindow.xaml;Views\AddLivreView.xaml;Views\EmployeesView.xaml;Views\LivresView.xaml;Views\MembersView.xaml;
 
 False
 

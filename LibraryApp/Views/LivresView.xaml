@@ -11,25 +11,27 @@
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center" Height="48" VerticalAlignment="Top" Width="1000" Background="#FF5F8670"/>
         <TextBlock HorizontalAlignment="Left" Margin="452,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="118" FontFamily="Berlin Sans FB" FontSize="18" Foreground="#FF2E8A31"><Run Language="fr-fr" Text="Liste Des Livres"/></TextBlock>
-        <DataGrid AutoGenerateColumns="False" x:Name="LivresDataGrid" ItemsSource="{Binding Livres}" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Margin="64,85,42,52"
+        <DataGrid AutoGenerateColumns="False" x:Name="LivresDataGrid" ItemsSource="{Binding Livres}" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Margin="64,85,42,99"
           AlternatingRowBackground="#E5E5E5" GridLinesVisibility="All" HorizontalGridLinesBrush="#C0C0C0" VerticalGridLinesBrush="#C0C0C0" RowBackground="#F0F0F0" SelectionMode="Single" SelectionUnit="FullRow" BorderBrush="#C0C0C0" BorderThickness="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
-                <DataGridTextColumn Header="Titre" Binding="{Binding Titre}" />
-                <DataGridTextColumn Header="Auteur" Binding="{Binding Auteur}" />
-                <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" />
-                <DataGridTextColumn Header="Date de Publication" Binding="{Binding DatePublication}" />
-                <DataGridTextColumn Header="Quantité Disponible" Binding="{Binding QuantiteDisponible}" />
-                <!-- Ajoutez d'autres colonnes si nécessaire -->
-                <DataGridTemplateColumn Header="Image" Width="Auto">
+                <DataGridTextColumn Header="Titre" Width="150" Binding="{Binding Titre}" />
+                <DataGridTextColumn Header="Auteur" Width="150" Binding="{Binding Auteur}" />
+                <DataGridTextColumn Header="ISBN" Width="150" Binding="{Binding ISBN}" />
+                <DataGridTextColumn Header="Date de Publication" Width="150" Binding="{Binding DatePublication}" />
+                <DataGridTextColumn Header="Quantité Disponible" Width="150" Binding="{Binding QuantiteDisponible}" />
+                <DataGridTemplateColumn Header="Image" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Image Source="{Binding ImageSource}" Width="50" Height="50"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Ajouter Livre" HorizontalAlignment="Left" Margin="515,388,0,0" VerticalAlignment="Top" Height="36" Width="90" Background="White" BorderBrush="Black" Foreground="Black" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="AjouterLivreButton_Click" />
+        <Button Content="Export_Csv" HorizontalAlignment="Left" Margin="381,388,0,0" VerticalAlignment="Top" Height="36" Width="90" Background="White" BorderBrush="#FF2E8A31" Foreground="#FF2E8A31" Padding="2,2,2,2" ScrollViewer.CanContentScroll="True" FontFamily="Impact" BorderThickness="1,1,10,1" Click="ExportCsvButton_Click"/>
 
     </Grid>
 </Page>

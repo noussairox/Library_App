@@ -26,5 +26,13 @@ namespace LibraryApp.ViewModels
             return dbContext.Livres;
         }
 
+        public void ExportToCsv(string filePath)
+        {
+            var csvContent = _livreService.ExportLivresToCsv();
+
+            // Enregistrez le contenu CSV dans le fichier spécifié
+            File.WriteAllText(filePath, csvContent);
+        }
+
     }
 }
