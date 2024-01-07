@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibraryApp.Models
 {
@@ -23,10 +19,10 @@ namespace LibraryApp.Models
         [Required(ErrorMessage = "Le numéro de téléphone est requis.")]
         public string NumeroTelephone { get; set; }
 
+        [EmailAddress(ErrorMessage = "L'e-mail n'est pas dans un format valide.")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "La date d'inscription est requise.")]
         public DateTime DateInscription { get; set; } = DateTime.Now;
     }
-
 }

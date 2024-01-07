@@ -196,6 +196,18 @@
     <Compile Include="Migrations\20240104173058_Reservation_002.designer.cs">
       <DependentUpon>20240104173058_Reservation_002.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20240104231903_Reservation_003.cs" />
+    <Compile Include="Migrations\20240104231903_Reservation_003.designer.cs">
+      <DependentUpon>20240104231903_Reservation_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240105004124_MemberUpdate_002.cs" />
+    <Compile Include="Migrations\20240105004124_MemberUpdate_002.designer.cs">
+      <DependentUpon>20240105004124_MemberUpdate_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240105130005_Reservation_004.cs" />
+    <Compile Include="Migrations\20240105130005_Reservation_004.designer.cs">
+      <DependentUpon>20240105130005_Reservation_004.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\LibraryDbContextModelSnapshot.cs" />
     <Compile Include="Models\Employe.cs" />
     <Compile Include="Models\LibraryDbContext.cs" />
@@ -205,9 +217,11 @@
     <Compile Include="Services\LibraryService.cs" />
     <Compile Include="Services\LivreService.cs" />
     <Compile Include="Services\MemberService.cs" />
+    <Compile Include="Services\ReservationService.cs" />
     <Compile Include="ViewModels\EmployeeViewModel .cs" />
     <Compile Include="ViewModels\LivreViewModel.cs" />
     <Compile Include="ViewModels\MemberViewModel.cs" />
+    <Compile Include="ViewModels\ReservationViewModel.cs" />
     <Compile Include="Views\AddLivreView.xaml.cs">
       <DependentUpon>AddLivreView.xaml</DependentUpon>
     </Compile>
@@ -219,6 +233,9 @@
     </Compile>
     <Compile Include="Views\MembersView.xaml.cs">
       <DependentUpon>MembersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReservationView.xaml.cs">
+      <DependentUpon>ReservationView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -245,6 +262,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MembersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReservationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
