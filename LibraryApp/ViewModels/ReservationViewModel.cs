@@ -1,6 +1,7 @@
 ﻿using LibraryApp.Models;
 using LibraryApp.Services;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace LibraryApp.ViewModels
 {
@@ -12,8 +13,13 @@ namespace LibraryApp.ViewModels
 
         public ReservationViewModel()
         {
+            Reservations = new ObservableCollection<Reservation>(GetLivresFromDatabase());
             _reservationService = new ReservationService(new LibraryDbContext());
-            Reservations = new ObservableCollection<Reservation>(_reservationService.GetReservations());
+        }
+        private IQueryable<Reservation> GetLivresFromDatabase()
+        {
+            var dbContext = new LibraryDbContext();
+            return dbContext.Reservations;
         }
     }
 }

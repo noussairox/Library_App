@@ -1,4 +1,7 @@
-﻿using System;
+﻿using LibraryApp.Models;
+using LibraryApp.Services;
+using LibraryApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,12 @@ namespace LibraryApp.Views
     /// </summary>
     public partial class ReservationView : Page
     {
+        private readonly ReservationService _reservationservice;
         public ReservationView()
         {
             InitializeComponent();
+            DataContext = new ReservationViewModel();
+            _reservationservice = new ReservationService(new LibraryDbContext());
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using LibraryApp.Models;
 using LibraryApp.Services;
 using LibraryApp.ViewModels;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,6 +61,30 @@ namespace LibraryApp.Views
 
                 MessageBox.Show($"Les Livres ont été exportés avec succès vers : {filePath}", "Exportation réussie", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+        }
+
+        public void ImportCsvButton_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog
+            {
+                Filter = "CSV files (*.csv)|*.csv",
+                Title = "Select a CSV file for import"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                var filePath = openFileDialog.FileName;
+                ((LivreViewModel)DataContext).ImportFromCsv(filePath);
+            }
+        }
+
+        private void PageReservation_Click(object sender, RoutedEventArgs e)
+        {
+            Frame frame = new Frame();
+            ReservationView reserView = new ReservationView();
+            frame.Content = reserView;
+            Window mainWindow = Window.GetWindow((Button)sender);
+            mainWindow.Content = frame;
         }
     }
 }

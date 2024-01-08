@@ -36,7 +36,7 @@ namespace LibraryApp.Services
 
             if (existingLivre != null)
             {
-                
+
                 existingLivre.Titre = livre.Titre;
                 existingLivre.Auteur = livre.Auteur;
                 existingLivre.ISBN = livre.ISBN;
@@ -76,6 +76,28 @@ namespace LibraryApp.Services
             }
 
             return csvContent.ToString();
+        }
+
+        // Importer des livres à partir d'un fichier CSV
+        public void ImportLivresFromCsv(string filePath)
+        {
+            var csvLines = File.ReadAllLines(filePath).Skip(1);
+
+            foreach (var line in csvLines)
+            {
+                var values = line.Split(',');
+                var livre = new Livre
+                {
+                    Titre = values[1],
+                    Auteur = values[2],
+                    ISBN = values[3],
+                    DatePublication = DateTime.Parse(values[4]),
+                    QuantiteDisponible = int.Parse(values[5]),
+                    Image = File.ReadAllBytes(values[6])
+                };
+
+                AddLivre(livre);
+            }
         }
     }
 }

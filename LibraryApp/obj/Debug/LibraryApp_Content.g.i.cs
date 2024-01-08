@@ -8,6 +8,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/2471952.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/1.jpeg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/10.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/11.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/12.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/13.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/14.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/15.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/16.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/17.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/18.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/19.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/2.jpeg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/20.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/3.jpeg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/4.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/5.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/6.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/7.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/8.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("products/9.jpg")]
 
 

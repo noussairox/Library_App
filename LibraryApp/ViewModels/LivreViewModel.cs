@@ -5,6 +5,7 @@ using LibraryApp.Models;
 using LibraryApp.Services;
 using System.Linq;
 using Microsoft.Win32;
+using System.Windows;
 
 namespace LibraryApp.ViewModels
 {
@@ -32,6 +33,19 @@ namespace LibraryApp.ViewModels
 
             // Enregistrez le contenu CSV dans le fichier spécifié
             File.WriteAllText(filePath, csvContent);
+        }
+        public void ImportFromCsv(string filePath)
+        {
+            _livreService.ImportLivresFromCsv(filePath);
+
+            // Mettez à jour la collection après l'importation
+            Livres.Clear();
+            foreach (var livre in GetLivresFromDatabase())
+            {
+                Livres.Add(livre);
+            }
+
+            MessageBox.Show("Les livres ont été importés avec succès.", "Importation réussie", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
     }
